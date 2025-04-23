@@ -118,7 +118,7 @@ document.getElementById("addJobBtn").addEventListener("click", async () => {
   else if (link.includes("glassdoor.com")) source = "Glassdoor";
 
   try {
-    const res = await fetch("http://127.0.0.1:5000/scrape", {
+    const res = await fetch("https://job-tracker-backend-wjuk.onrender.com/scrape", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
