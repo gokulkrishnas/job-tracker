@@ -1,0 +1,247 @@
+:root {
+    --bg: #fff2d8;
+    --container-bg: #ffffff;
+    --text: #3e3e3e;
+    --subtitle: #6c5f4f;
+    --header-text: #6c5f4f;
+    --border: #cdb89f;
+    --input-bg: #fdfaf6;
+}
+
+body.dark-mode {
+    --bg: #121212;
+    --container-bg: #1e1e1e;
+    --text: #e0e0e0;
+    --subtitle: #b8b8b8;
+    --header-text: #3e3e3e;
+    --border: #333333;
+    --input-bg: #2a2a2a;
+}
+
+/* Reset & Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    padding: 2rem;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 0.3rem;
+    color: #a47148;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--subtitle);
+}
+
+/* Input Section */
+.input-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.input-section input {
+    flex: 1 1 60%;
+    padding: 0.8rem;
+    border-radius: 6px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 1rem;
+}
+
+.input-section button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    background-color: #a47148;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.input-section button:hover {
+    background-color: #8a5a3c;
+}
+
+/* Table Placeholder */
+#jobTable {
+    background-color: var(--container-bg);
+    border: 1px solid var(--border);
+    padding: 1rem;
+    min-height: 200px;
+    border: 1px solid #cdb89f;
+}
+
+button#exportCSV,
+button#exportXLSX {
+    margin-right: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #a47148;
+    border: none;
+    color: #fff;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button#exportCSV:hover,
+button#exportXLSX:hover {
+    background-color: #8a5a3c;
+}
+
+.filter-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.filter-section input,
+.filter-section select {
+    padding: 0.6rem;
+    border-radius: 6px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.filter-section button {
+    padding: 0.6rem 1.2rem;
+    background-color: #a47148;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.filter-section button:hover {
+    background-color: #8a5a3c;
+}
+
+/* Style tweaks for Tabulator */
+.tabulator {
+    background-color: var(--container-bg);
+    color: var(--text);
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    font-size: 0.95rem;
+    border: 1px solid #ded5c4;
+}
+
+.tabulator .tabulator-header {
+    background-color: var(--input-bg);
+    color: var(--header-text);
+    font-weight: bold;
+    border-bottom: 1px solid #cdb89f;
+}
+
+.tabulator-row {
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s ease;
+}
+
+.tabulator-row:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.tabulator-cell {
+    padding: 8px 12px;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+#toggleTheme {
+    background-color: #a47148;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#toggleTheme:hover {
+    background-color: #8a5a3c;
+}
+
+/* Spinner Overlay */
+#spinnerOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #eee;
+    border-top: 6px solid #a47148;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#clearAllJobs {
+    padding: 0.6rem 1.2rem;
+    background-color: #a47148;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: background 0.2s;
+}
+
+#clearAllJobs:hover {
+    background-color: #8a5a3c;
+}

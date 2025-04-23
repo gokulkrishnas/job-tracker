@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Tracker</title>
+
+    <!-- Tabulator LOCAL CSS -->
+    <link rel="stylesheet" href="tabulator.min.css" />
+
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="theme-toggle">
+            <button id="toggleTheme">🌙 Toggle Theme</button>
+        </div>
+
+        <header>
+            <h1>🧾 Job Application Tracker</h1>
+            <p class="subtitle">Track all your job applications in one place — no more spreadsheets!</p>
+        </header>
+
+        <div class="input-section">
+            <input type="url" id="jobLinkInput" placeholder="Paste job link here..." />
+            <button id="addJobBtn">+ Add Job</button>
+        </div>
+
+        <div class="filter-section">
+            <select id="statusFilter">
+                <option value="">All Statuses</option>
+                <option value="Applied">Applied</option>
+                <option value="Interviewed">Interviewed</option>
+                <option value="Offer">Offer</option>
+                <option value="Rejected">Rejected</option>
+            </select>
+
+            <input type="text" id="locationFilter" placeholder="Filter by location..." />
+            <input type="text" id="titleFilter" placeholder="Filter by title..." />
+            <button id="clearFilters">Clear Filters</button>
+        </div>
+
+        <div id="jobTable"></div>
+    </div>
+    <div id="spinnerOverlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Tabulator LOCAL JS -->
+    <script src="tabulator.min.js"></script>
+    <!-- SheetJS (required for Excel export) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
